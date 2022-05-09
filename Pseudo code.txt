@@ -1,0 +1,95 @@
+#made by Cyclops!
+#visit https://github.com/cyclops5859 for more.
+
+Modules:
+Import time, pyttsx3 and os
+
+Program <ATM Machine>
+
+Sapi5 Voice engine
+Voice id [1]
+
+Display: Welcome to Cyclops Bank!
+Speak: Welcome to Cyclops Bank!
+
+Define drive path exist:
+	Check os for drive (Keycard)
+Seeking drives –‘d’,’e’,’f’
+
+Trials given – 3
+User pin – 5836
+Sos – 911
+Sos 2 – 6385
+Amount – 13420.69
+
+Display: 1. please pick your language: English \n2. kripya apani bhasha chunen : Hindi \n3. krpaya apali bhasa nivada : Marathi \n4. Tafadhali chagua lugha yako: Kswahili")
+Speak: Please pick your language: English, Hindi, Marathi or Kswahili
+
+Input language():
+if language == 1:
+	Display: You have chosen: English
+Speak: You have chosen: English
+
+
+While trials != 0:
+	Display: Detecting key card! Please wait
+	Speak: Detecting key card! Please wait
+
+	If drive == true:
+		<Program begins>
+			If pin entered == 911, 6385
+			<Boot into secure mode>
+		
+		elif pin != userpin:
+			Display: Incorrect pin!
+		Else:
+			Display: Login successful
+			
+Display: Please select your Account: \n 1. Current                    Account \n 2. Saving Account
+Speak: Please select your Account: \n 1. Current                    Account \n 2. Saving Account
+
+                       Input response:
+					(Task 1 -  Balance Check)
+                            If response == 1:
+                  			Display: ‘You have’ , amount ,’USD in your account’.
+Speak: You have the following                                                   amount in your account’.
+
+					(Task 2 – Withdrawing Amount)
+						If response == 2:
+	                         Display: Enter the amount you would like to withdraw
+                                Speak: Enter the amount you would like to withdraw.
+
+Input cashout()
+If cashout > amount:
+Display: You have in sufficient    balance.
+Speak: You have in sufficient    balance
+Else:
+	Amount = Amount - cashout
+Display: Your new amount is , Amount.
+Speak: Your new balance is.
+
+(Task 3 – Changing pin)
+						If response == 3:											Display: Enter a new pin.
+Speak: Enter a new pin.
+Input new_pin()
+
+Display: Confirm new pin.
+Speak: Confirm new pin.
+Input new_ppin()
+
+If new_ppin == new_pin:
+	Display: Pin mismatched.
+     Speak: Pin mismatched.
+
+Else:
+	Userpinn == new_pin
+     Display: New pin saved.
+     Speak: New pin saved.
+
+ (Task 4 – Quit)
+						If response == 4:											function – exit()
+
+Else:
+Display: Response not valid.		Speak: Response not valid.
+
+<Continue with 3 other languages>                               
